@@ -4,6 +4,9 @@ import { addBook, bookList, deleteBook, editBook, viewBook } from "../controller
 import multerConfig from "../middlewares/multer/uploadImage.js"
 import { addReviews } from "../controllers/reviewController.js"
 import { check } from "express-validator"
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const router = Router()
 
@@ -28,4 +31,4 @@ router.patch('/delete', deleteBook)
 
 router.post('/view', viewBook)
 
-export default router
+export default router;
